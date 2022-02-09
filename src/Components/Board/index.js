@@ -1,6 +1,6 @@
 import React from "react";
 import Square from "../Square/";
-function Board() {
+function Board({ playerTurn, makeAMove, boardArray }) {
   //! PROPS FROM 'GAME'
   // board state
   // makeAMove function
@@ -10,16 +10,9 @@ function Board() {
 
   return (
     <div className="parent">
-      <Square />
-      <Square />
-      <Square />
-      <Square />
-      <Square />
-      <Square />
-      <Square />
-      <Square />
-      <Square />
-      <Square />
+      {boardArray.map(function (square, index) {
+        return <Square index={index} />;
+      })}
     </div>
   );
 }
