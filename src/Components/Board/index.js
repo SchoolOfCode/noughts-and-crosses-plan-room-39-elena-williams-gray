@@ -1,20 +1,26 @@
-import React from 'react'
-import Square from '../Square/index.js'
+import React from "react";
+import Square from "../Square/";
 function Board() {
+  //! PROPS FROM 'GAME'
+  // board state
+  // makeAMove function
+
+  //? Render the Square component using the board state array
+
   return (
-    <div>
-    <Square/>
-    <Square/>
-    <Square/>
-    <Square/>
-    <Square/>
-    <Square/>
-    <Square/>
-    <Square/>
-    <Square/>
-    <Square/>
+    <div className="parent">
+      <Square />
+      <Square />
+      <Square />
+      <Square />
+      <Square />
+      <Square />
+      <Square />
+      <Square />
+      <Square />
+      <Square />
     </div>
-  )
+  );
 }
 
-export default Board
+export default Board;
