@@ -1,15 +1,14 @@
 import React from "react";
+import "./Square.css";
 
-function Square() {
-  //! PROPS FROM BOARD
-  // makeAMove function
+function Square({ value, onClick }) {
+  const style = value ? `squares ${value}` : "squares";
 
   return (
     <div>
-      Square
-      {
-        // render an 'X' or an 'O'
-      }
+      <button className={style} onClick={onClick}>
+        {value}
+      </button>
     </div>
   );
 }

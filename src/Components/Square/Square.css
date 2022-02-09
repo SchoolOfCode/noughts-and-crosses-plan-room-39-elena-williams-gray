@@ -1,0 +1,15 @@
+.squares {
+  background-color: black;
+  color: white;
+  height: 20vh;
+  width: 20vw;
+}
+
+.checked {
+  color: green;
+}
+.player {
+  margin-top: 3px;
+  transform: uppercase;
+  color: white;
+}

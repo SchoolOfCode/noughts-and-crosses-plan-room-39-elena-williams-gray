@@ -1,45 +1,34 @@
 import React, { useState } from "react";
 import Board from "../Board";
+import { calculateWinner } from "../../cal";
 
 function Game() {
-  const [playerTurn, setplayerTurn] = useState(true);
-  const [boardArray, setBoardArray] = useState([1,2,3,4,5,6,7,8,9]);
-  //! create two bits of state to hold
-  // the current player turn
-  // the board (an array of arrays)
+  const [boardArray, setBoardArray] = useState(Array(9).fill(null));
+  const [playerTurn, setplayerTurn] = useState(false);
 
-  //! Behaviour/Functions
-  function makeAMove() {
-    console.log(`make a move function`);
-    //? makeAMove function
-    // if the square is not empty you can't pick it
-    // if the square is empty, you can pick it
-    // it puts the players symbol in that square
-    // it changes the 'state' of board
+  const winner = calculateWinner(boardArray);
+  const currentPlayer = playerTurn ? "X" : "O";
 
-    setplayerTurn(!false)
-  }
+  function makeAMove(index) {
+    if (winner || boardArray[index]) {
+      return;
+    }
+    setBoardArray([
+      ...boardArray.slice(0, index),
+      currentPlayer,
+      ...boardArray.slice(index + 1),
+    ]);
 
-  function checkWinner() {
-    console.log(`check the winner`);
-    //? checkWinner function
-    // check if the board state matched any of the 'win conditions'
-    // if there is the game ends and the previous player wins
+    setplayerTurn(!playerTurn);
   }
 
   return (
     <div>
-      <Board boardArray={boardArray} playerTurn={playerTurn} makeAMove={makeAMove} />
-
-      {
-        //! pass PROPS of 'board' array and makeAMove function
-        // render the Board component
-        // who's turn it is
-        // Winner
-      }
-      <h1>Player Turn:{playerTurn ? "X" : "0"}</h1>
-      <h2>Winner is?</h2>
+      <h1>Welcome GRRRRRR the game!</h1>
+      <Board boardArray={boardArray} makeAMove={makeAMove} />
     </div>
   );
 }
 export default Game;
+/* <h1>Player Turn:{playerTurn ? "X" : "O"}</h1>
+      <h2>Winner is {playerTurn ? "X" : "O"}</h2> */
