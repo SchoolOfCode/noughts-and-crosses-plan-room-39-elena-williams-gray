@@ -17,13 +17,17 @@ function Game() {
   //? checkWinner function
   // check if the board state matched any of the 'win conditions'
   // if there is the game ends and the previous player wins
+
   return (
     <div>
       {
+        //! pass PROPS of 'board' array and makeAMove function
         // render the Board component
         // who's turn it is
         // Winner
       }
+      <h1>Player Turn</h1>
+      <h2>Winner is?</h2>
     </div>
   );
 }

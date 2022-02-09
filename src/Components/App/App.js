@@ -1,14 +1,11 @@
-import Game from '../Game/index.js'
-import './App.css';
-import Board from '../Board/index.js';
-
+import Game from "../Game/index.js";
+import "./App.css";
+import Board from "../Board/index.js";
 
 function App() {
   return (
     <div className="App">
-  <Game/> 
-  
-  <Board/>
+      <Game />
     </div>
   );
 }

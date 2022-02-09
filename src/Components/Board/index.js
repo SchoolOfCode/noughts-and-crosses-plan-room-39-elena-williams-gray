@@ -5,7 +5,8 @@ function Board() {
   // board state
   // makeAMove function
 
-  //? Render the Square component using the board state array
+  //? Render the Square component using the 'board' state array
+  // each Square will have a unique index
 
   return (
     <div className="parent">
